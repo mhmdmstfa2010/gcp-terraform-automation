@@ -273,20 +273,3 @@ terraform fmt -check
 4. Run `terraform apply` to create resources
 5. Use outputs for integration with other systems
 
-## 📚 Additional Resources
-
-- [Terraform GCP Provider Documentation](https://registry.terraform.io/providers/hashicorp/google/latest/docs)
-- [GCP Best Practices](https://cloud.google.com/docs/terraform/best-practices)
-- [Terraform Modules](https://www.terraform.io/docs/modules/index.html)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
