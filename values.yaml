@@ -1,0 +1,80 @@
+# GCP Terraform Project - Configuration Values
+
+project_id: "my-gcp-project"
+region: "us-central1"
+zone: "us-central1-a"
+
+vpc_name: "main-vpc"
+
+subnets:
+  - name: "subnet-1"
+    cidr: "10.0.1.0/24"
+  - name: "subnet-2"
+    cidr: "10.0.2.0/24"
+  - name: "subnet-3"
+    cidr: "10.0.3.0/24"
+
+firewall_rules:
+  - name: "allow-ssh"
+    ports: ["22"]
+  - name: "allow-http"
+    ports: ["80"]
+  - name: "allow-https"
+    ports: ["443"]
+  - name: "allow-icmp"
+    ports: ["icmp"]
+
+iam_bindings:
+  - role: "roles/storage.admin"
+    members: ["user:admin@example.com"]
+  - role: "roles/compute.instanceAdmin"
+    members: ["user:admin@example.com"]
+
+service_accounts:
+  - account_id: "terraform-sa"
+    display_name: "Terraform Service Account"
+    description: "Service account for Terraform operations"
+  - account_id: "gke-sa"
+    display_name: "GKE Service Account"
+    description: "Service account for GKE cluster"
+
+buckets:
+  - name: "my-tf-bucket"
+    location: "US"
+  - name: "my-backup-bucket"
+    location: "US"
+
+instances:
+  - name: "vm-01"
+    machine_type: "e2-medium"
+    zone: "us-central1-a"
+  - name: "vm-02"
+    machine_type: "e2-small"
+    zone: "us-central1-b"
+
+sql_instances:
+  - name: "my-sql"
+    database_version: "POSTGRES_14"
+    tier: "db-f1-micro"
+
+gke_clusters:
+  - name: "dev-cluster"
+    node_count: 3
+
+node_pools:
+  - name: "default-pool"
+    node_count: 3
+    machine_type: "e2-medium"
+  - name: "spot-pool"
+    node_count: 2
+    machine_type: "e2-small"
+
+dns_zones:
+  - name: "my-zone"
+    domain: "example.com"
+
+load_balancers:
+  - name: "web-lb"
+    type: "HTTP"
+  - name: "api-lb"
+    type: "TCP"
